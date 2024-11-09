@@ -34,8 +34,6 @@ connectDB().then(() => {
 
 
 
-
-
 // const app = express();
 
 // (  async () => {

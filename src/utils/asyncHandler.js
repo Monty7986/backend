@@ -1,10 +1,11 @@
 // This function is a higher-order middleware wrapper for handling errors in asynchronous Express route handlers.
 
-const asyncHandler = (reqestHandler) => 
-  (req,res,next) => {
-    Promise.resolve(reqestHandler(req,res,next))
-    .catch((error) => next(error))
-  }
+const asyncHandler = (requestHandler) => {
+    return (req, res, next) => {
+        Promise.resolve(requestHandler(req, res, next))
+        .catch((err) => next(err))
+    }
+}
 
   export default asyncHandler;
 
